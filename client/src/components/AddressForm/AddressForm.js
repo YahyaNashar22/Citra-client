@@ -1,7 +1,31 @@
 import React from 'react';
 import styles from './AddressForm.module.css';
+import { useState } from 'react';
 
 function AddressForm() {
+
+  const [fullName, setFullName] = useState('');
+  const [area, setArea] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [building, setBuilding] = useState('');
+  const [ownerName, setOwnerName] = useState('');
+  const [shopsName, setShopsName] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = {
+      fullName,
+      area,
+      phoneNumber,
+      building,
+      ownerName,
+      shopsName,
+    };
+
+    sendFormDataViaWhatsApp(formData);
+
+  };
   return (
     
     <div className={styles.container}>
@@ -14,42 +38,54 @@ function AddressForm() {
             type="text"
             id="fullName"
             name="fullName"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
             placeholder="ادخل الاسم الكامل" />
           </div>
           {/* ... Other user input boxes */}
           <div className={styles.userInputBox}>
-            <label for="area">المنطقة</label>
-            <input type="email"
-                    id="email"
-                    name="email"
+            <label htmlFor="area">المنطقة</label>
+            <input type="text"
+                    id="area"
+                    name="area"
+                    value={area}
+                    onChange={(e) => setArea(e.target.value)}
                     placeholder="ادخل المنطقة"/>
           </div>
           <div className={styles.userInputBox}>
-            <label for="phoneNumber">رقم الهاتف</label>
+            <label htmlFor="phoneNumber">رقم الهاتف</label>
             <input type="text"
                     id="phoneNumber"
                     name="phoneNumber"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
                     placeholder="ادخل رقم الهاتف"/>
           </div>
           <div className={styles.userInputBox}>
-            <label for="building">البناية و الطابق</label>
+            <label htmlFor="building">البناية و الطابق</label>
             <input type="text"
-                    id="phoneNumber"
-                    name="phoneNumber"
+                    id="building"
+                    name="building"
+                    value={building}
+                    onChange={(e) => setBuilding(e.target.value)}
                     placeholder="ادخل اسم البناية و الطابق"/>
           </div>
           <div className={styles.userInputBox}>
-            <label for="ownername">اسم صاحب المنزل</label>
+            <label htmlFor="ownername">اسم صاحب المنزل</label>
             <input type="text"
-                    id="phoneNumber"
-                    name="phoneNumber"
+                    id="ownerName"
+                    name="ownerName"
+                    value={ownerName}
+                    onChange={(e) => setOwnerName(e.target.value)}
                     placeholder="ادخل الاسم هنا"/>
           </div>
           <div className={styles.userInputBox}>
-            <label for="shopesname">اسم محلين جانب مدخل البناية</label>
+            <label htmlFor="shopesname">اسم محلين جانب مدخل البناية</label>
             <input type="text"
-                    id="phoneNumber"
-                    name="phoneNumber"
+                    id="shopesName"
+                    name="shopesName"
+                    value={shopsName}
+                    onChange={(e) => setShopsName(e.target.value)}
                     placeholder="ادخل اسماء المحلات"/>
           </div>
           {/* <div className={styles.userInputBox}>

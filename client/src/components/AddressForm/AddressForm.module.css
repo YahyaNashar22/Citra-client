@@ -4,7 +4,8 @@
     max-width: 650px;
     background: white;
     padding: 28px;
-    margin: 0 20px;
+    /* margin: 0 100px 100px 100px; */
+    margin: 200px;
     border-radius: 10px;
     /* box-shadow: inset -2px 2px 2px var(--brown-color); */
     justify-content: center;
