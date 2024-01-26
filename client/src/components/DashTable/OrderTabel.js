@@ -90,13 +90,15 @@ export default function DashTable() {
 
 
   useEffect(() => {
-    const rowsWithId = orderData.orders.map((row) => ({
-      ...row,
-      id: row._id, // Assuming _id is a unique identifier
-    }));
-    setRows(rowsWithId);
+    if (orderData && orderData.orders) {
+      const rowsWithId = orderData.orders.map((row) => ({
+        ...row,
+        id: row._id, // Assuming _id is a unique identifier
+      }));
+      setRows(rowsWithId);
+    }
   }, [orderData]);
-
+  
 
 
   if (isLoading) {
