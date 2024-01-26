@@ -45,7 +45,7 @@ const DashTable = () => {
   
 
   const columns = [
-    { field: 'name', headerName: 'الإسم', width: 180, editable: true ,    flex:1,},
+    { field: 'name', headerName: 'الإسم', width: 180, editable: true ,    flex:1,  cellClassName: "delete-cell",},
     {    flex:1,
       field: 'email',
       headerName: 'البريد الالكتروني',
@@ -54,6 +54,7 @@ const DashTable = () => {
       align: 'left',
       headerAlign: 'left',
       editable: true,
+      cellClassName: "delete-cell",
     },
     {    flex:1,
       field: 'joinDate',
@@ -61,6 +62,7 @@ const DashTable = () => {
       type: 'date',
       width: 180,
       editable: true,
+      cellClassName: "delete-cell",
     },
     {
       flex: 1,
@@ -71,6 +73,7 @@ const DashTable = () => {
       align: 'left',
       headerAlign: 'left',
       editable: true,
+      cellClassName: "delete-cell",
     },
     {    flex:1,
       field: 'role',
@@ -79,6 +82,7 @@ const DashTable = () => {
       editable: true,
       type: 'singleSelect',
       valueOptions: ['admin', 'user', 'dataEntry'],
+      cellClassName: "delete-cell",
     },
     // Add more columns as needed
     {
@@ -97,7 +101,7 @@ const DashTable = () => {
             borderColor: "var(--blue-color) ",
             "&:hover": {
               boxShadow: "0px 0px 10px 3px rgba(0,0,0,0.5)",
-              backgroundColor: "var(--blue-color)",
+              backgroundColor: "var(--gray-color)",
             },
           }}
           onClick={() => handleRowClickDelete(params)}
@@ -200,7 +204,7 @@ const DashTable = () => {
           {...data}
           onPageChange={handlePageChange}
           onPageSizeChange={handlePageSizeChange}
-          onRowClick={(params, event) => handleRowClick(params, event)}
+          // onRowClick={(params, event) => handleRowClick(params, event)}
           // filterMode="server" // Optional: Use server-side filtering
           onFilterModelChange={(model) => setFilterModel(model)}
           initialState={{
