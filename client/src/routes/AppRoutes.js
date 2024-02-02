@@ -1,6 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home/Home.js";
+import AddProduct from "../components/AddProduct/AddProduct.js";
+import AddressForm from "../../src/components/AddressForm/AddressForm.js"
 import Products from "../pages/Dashboard/Products/Products.js";
 import Users from "../pages/Dashboard/Users/Users.js";
 import OverView from "../pages/Dashboard/OverView/OverView.js";
@@ -13,6 +15,11 @@ import NotFound from "../pages/NotFound/NotFound.js";
 import LayoutWithSidebar from "./LayoutWithSidebar.js";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
 import Cart from "../pages/cart/Cart.js";
+<<<<<<< HEAD
+=======
+import ForgetPassword from "../pages/ForgetPassword/ForgetPassword.js";
+import ProtectedRoute from "./ProtectedRoute.js";
+>>>>>>> 720a69f4befc0275f212e747651a7170fa210c4c
 function AppRoutes() {
   return (
     <Routes>
@@ -22,46 +29,63 @@ function AppRoutes() {
         <Route path="/singleProduct/:slug" element={<SingleProduct />} />
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/singleProduct" element={<SingleProduct />}></Route>
+<<<<<<< HEAD
+=======
+        <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
+        <Route path="/orderform" element={<AddressForm />}></Route>
+        <Route path="/test" element={<AddProduct />}></Route>
+>>>>>>> 720a69f4befc0275f212e747651a7170fa210c4c
       </Route>
       <Route path="/signin" element={<SignIn />}></Route>
       <Route path="/signup" element={<SignUp />}></Route>
 
+{/* protected route  */}
       <Route
         path="/products"
         element={
-          <LayoutWithSidebar>
-            {" "}
-            <Products />
-          </LayoutWithSidebar>
+          <ProtectedRoute>
+
+       
+            <LayoutWithSidebar>
+              <Products />
+            </LayoutWithSidebar>
+            </ProtectedRoute>
         }
       ></Route>
       <Route
         path="/users"
         element={
-          <LayoutWithSidebar>
-            {" "}
-            <Users />
-          </LayoutWithSidebar>
+          <ProtectedRoute>
+            <LayoutWithSidebar>
+              {" "}
+              <Users />
+            </LayoutWithSidebar>
+            </ProtectedRoute>
         }
       ></Route>
       <Route
         path="/overview"
         element={
-          <LayoutWithSidebar>
-            {" "}
-            <OverView />
-          </LayoutWithSidebar>
+          
+            <LayoutWithSidebar>
+              {" "}
+              <OverView />
+            </LayoutWithSidebar>
+           
         }
       ></Route>
       <Route
         path="/orders"
         element={
-          <LayoutWithSidebar>
-            {" "}
-            <Order />
-          </LayoutWithSidebar>
+          <ProtectedRoute>
+            <LayoutWithSidebar>
+              {" "}
+              <Order />
+            </LayoutWithSidebar>
+             </ProtectedRoute>
         }
       ></Route>
+
       <Route path="/*" element={<NotFound />}></Route>
     </Routes>
   );
