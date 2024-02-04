@@ -5,7 +5,7 @@ import BarCharts from "./BarCharts.module.css";
 import SingleCard from "./SingleCard";
 import axios from "axios";
 import SourceData from "./SourceData.js";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
 
@@ -130,15 +130,17 @@ const BarChart = () => {
 
   return (
     <div className={BarCharts.AppChart}>
+      <h1 className={BarCharts.title1}> لمحة عامة</h1>
       <div className={BarCharts.cardsWrapper} >
-        <SingleCard className={BarCharts.card} />
-        <SingleCard className={BarCharts.card} />
-        <SingleCard className={BarCharts.card} />
-        <SingleCard className={BarCharts.card} />
+        <SingleCard />
+        <SingleCard />
+        <SingleCard />
+        <SingleCard />
       </div>
       <div className={`${BarCharts.dataCard} ${BarCharts.revenueCard}`}>
 
         <Line
+          width= "100%"
           data={{
             labels: [
               'January', 'February', 'March', 'April', 'May', 'June',
@@ -168,19 +170,20 @@ const BarChart = () => {
           }}
         />
       </div>
+      <div className={BarCharts.ChartWrapper}>
+        <div className={`${BarCharts.dataCard} ${BarCharts.customerCard}`}>
+          <Bar
+            width= "100%"
+            data={chartData} options={chartOptions}
+          />
+        </div>
 
-      <div className={`${BarCharts.dataCard} ${BarCharts.customerCard}`}>
-        <Bar
-          data={chartData} options={chartOptions}
-  
-        />
-      </div>
-
-      <div className={`${BarCharts.dataCard} ${BarCharts.categoryCard}`}>
-        <Doughnut
-          data={pieChartData} options={pieChartOptions}
-          
-        />
+        <div className={`${BarCharts.dataCard} ${BarCharts.categoryCard}`}>
+          <Doughnut
+            width= "100%"
+            data={pieChartData} options={pieChartOptions}
+          />
+        </div>
       </div>
     </div>
   );
