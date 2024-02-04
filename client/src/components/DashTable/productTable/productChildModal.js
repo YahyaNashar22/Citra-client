@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-<<<<<<< HEAD
-=======
 import ProductForm from "../../../components/productForm/ProductForm";
->>>>>>> 67dff1dda3d5a8a6a5c6c1c502d261af5a9125a6
 import axios from "axios";
 import ProductForm from "../../../components/productForm/ProductForm.js";
 import { toast } from "react-toastify";
