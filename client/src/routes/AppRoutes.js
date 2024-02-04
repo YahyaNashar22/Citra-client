@@ -1,6 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home/Home.js";
+import AddProduct from "../components/AddProduct/AddProduct.js";
+import AddressForm from "../../src/components/AddressForm/AddressForm.js"
 import Products from "../pages/Dashboard/Products/Products.js";
 import Users from "../pages/Dashboard/Users/Users.js";
 import OverView from "../pages/Dashboard/OverView/OverView.js";
@@ -13,6 +15,11 @@ import NotFound from "../pages/NotFound/NotFound.js";
 import LayoutWithSidebar from "./LayoutWithSidebar.js";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
 import Cart from "../pages/cart/Cart.js";
+<<<<<<< HEAD
+=======
+import ForgetPassword from "../pages/ForgetPassword/ForgetPassword.js";
+import ProtectedRoute from "./ProtectedRoute.js";
+>>>>>>> 67dff1dda3d5a8a6a5c6c1c502d261af5a9125a6
 function AppRoutes() {
   return (
     <Routes>
@@ -26,42 +33,53 @@ function AppRoutes() {
       <Route path="/signin" element={<SignIn />}></Route>
       <Route path="/signup" element={<SignUp />}></Route>
 
+{/* protected route  */}
       <Route
         path="/products"
         element={
-          <LayoutWithSidebar>
-            {" "}
-            <Products />
-          </LayoutWithSidebar>
+          <ProtectedRoute>
+
+       
+            <LayoutWithSidebar>
+              <Products />
+            </LayoutWithSidebar>
+             </ProtectedRoute>
         }
       ></Route>
       <Route
         path="/users"
         element={
-          <LayoutWithSidebar>
-            {" "}
-            <Users />
-          </LayoutWithSidebar>
+          <ProtectedRoute>
+            <LayoutWithSidebar>
+              {" "}
+              <Users />
+            </LayoutWithSidebar>
+            </ProtectedRoute>
         }
       ></Route>
       <Route
         path="/overview"
         element={
-          <LayoutWithSidebar>
-            {" "}
-            <OverView />
-          </LayoutWithSidebar>
+          
+            <LayoutWithSidebar>
+              {" "}
+              <OverView />
+            </LayoutWithSidebar>
+           
         }
       ></Route>
       <Route
         path="/orders"
         element={
-          <LayoutWithSidebar>
-            {" "}
-            <Order />
-          </LayoutWithSidebar>
+          <ProtectedRoute>
+            <LayoutWithSidebar>
+              {" "}
+              <Order />
+            </LayoutWithSidebar>
+             </ProtectedRoute>
         }
       ></Route>
+
       <Route path="/*" element={<NotFound />}></Route>
     </Routes>
   );

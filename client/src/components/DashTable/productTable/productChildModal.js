@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+<<<<<<< HEAD
+=======
+import ProductForm from "../../../components/productForm/ProductForm";
+>>>>>>> 67dff1dda3d5a8a6a5c6c1c502d261af5a9125a6
 import axios from "axios";
 import ProductForm from "../../../components/productForm/ProductForm.js";
 import { toast } from "react-toastify";
@@ -32,7 +36,7 @@ const ChildModal = ({
     name: rowData.name || "",
     price: rowData.price || 0, // Assuming a default value for price
     serialNumber: rowData.serialNumber || "",
-    images: (rowData.images || []), // Assuming images is an array of strings
+    images: rowData.images || [], // Assuming images is an array of strings
     details: (rowData.details || []).map((detail) => ({
       color: detail.color || "",
       sizes: (detail.sizes || []).map((size) => ({
@@ -52,13 +56,11 @@ const ChildModal = ({
     onClose();
   };
 
-
-  
   const handleInputChange = (e) => {
     if (e.target) {
       const { name, value } = e.target;
       setFormData((prevData) => ({ ...prevData, [name]: value }));
-      
+
       // Add a check for subCategory and update it accordingly
       if (name === "subCategoryID") {
         setFormData((prevData) => ({ ...prevData, subCategoryID: value }));
@@ -83,13 +85,13 @@ const ChildModal = ({
 
       if (response.status === 200) {
         const updatedProduct = response.data;
-  
+
         const updatedRows = rows.map((row) =>
           row.id === updatedProduct.id ? updatedProduct : row
         );
-  
+
         setRows(updatedRows);
-  
+
         onClose();
         toast.success("تم تجديد المعلومات بنجاح");
         if (onSubmitSuccess) {
@@ -102,9 +104,8 @@ const ChildModal = ({
       console.error("Error updating product:", error);
     }
   };
-  
-  useEffect(() => {
 
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(

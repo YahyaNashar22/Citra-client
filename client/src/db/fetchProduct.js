@@ -2,8 +2,11 @@ import axios from "axios";
 export async function fetchProducts(nb) {
   try {
     const response = await axios.get(
-      `${process.env.REACT_APP_BACKEND}product/getall?page=${nb}`
+      `${process.env.REACT_APP_BACKEND}product/all-data`
     );
+    console.log("data product",response.data)
+    console.log("categ from product",response.data.categoryID)
+
     return response.data;
   } catch (error) {
     console.error("Error fetching Products:", error);
