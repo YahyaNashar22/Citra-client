@@ -15,11 +15,7 @@ import NotFound from "../pages/NotFound/NotFound.js";
 import LayoutWithSidebar from "./LayoutWithSidebar.js";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
 import Cart from "../pages/cart/Cart.js";
-<<<<<<< HEAD
-=======
-import ForgetPassword from "../pages/ForgetPassword/ForgetPassword.js";
 import ProtectedRoute from "./ProtectedRoute.js";
->>>>>>> 67dff1dda3d5a8a6a5c6c1c502d261af5a9125a6
 function AppRoutes() {
   return (
     <Routes>
