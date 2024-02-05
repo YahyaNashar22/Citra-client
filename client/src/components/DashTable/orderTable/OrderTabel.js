@@ -138,10 +138,6 @@ export default function DashTable() {
       console.error("Error updating order status:", error);
     }
   };
-<<<<<<< HEAD
-
-=======
->>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
   const columns = [
     {
       field: "orderNB",
@@ -153,8 +149,6 @@ export default function DashTable() {
       cellClassName: "delete-cell",
     },
 
-<<<<<<< HEAD
-=======
     {
       field: "productName",
       headerName: "اسم المنتج",
@@ -163,7 +157,6 @@ export default function DashTable() {
       flex: 1,
       cellClassName: "delete-cell",
     },
->>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
     {
       field: "productName",
       headerName: "اسم المنتج",
@@ -233,14 +226,10 @@ export default function DashTable() {
               <InputLabel
                 id={`status-label-${params.id}`}
                 style={{
-<<<<<<< HEAD
-                  color: params.row.status === "تم التسليم" ? "var(--blue-color)" : "",
-=======
                   color:
                     params.row.status === "تم التسليم"
                       ? "var(--blue-color)"
                       : "",
->>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
                 }}
               >
                 {params.row.status || "Select Status"}
@@ -295,10 +284,6 @@ export default function DashTable() {
       ),
     },
   ];
-<<<<<<< HEAD
-
-=======
->>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
   const data = {
     rows,
     columns,

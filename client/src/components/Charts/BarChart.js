@@ -16,7 +16,6 @@ defaults.plugins.title.font.size = 20;
 defaults.plugins.title.color = "black";
 
 const BarChart = () => {
-<<<<<<< HEAD
 
   // Fetch line(fetch orders)
   const [orderss, setOrderss] = useState([])
@@ -39,32 +38,6 @@ const BarChart = () => {
 
   // Group orders by month
   const ordersByMonth = orderss.reduce((acc, order) => {
-=======
-  // Fetch line
-  const fetchOrders = async () => {
-    try {
-      const response = await axios.get("http://localhost:5000/order/all");
-      return response.data.orders;
-    } catch (error) {
-      throw new Error("Error fetching data");
-    }
-  };
-
-  const { isLoading, data } = useQuery("order", fetchOrders);
-
-  if (isLoading) {
-    return <h2>Loading ...</h2>;
-  }
-  console.log("Data:", data);
-
-  if (!Array.isArray(data)) {
-    console.error("Invalid data structure:", data);
-    return <h2>Invalid data structure</h2>;
-  }
-
-  // Group orders by month
-  const ordersByMonth = data.reduce((acc, order) => {
->>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
     const month = new Date(order.createdAt).getMonth();
     if (!acc[month]) {
       acc[month] = [];
@@ -72,7 +45,6 @@ const BarChart = () => {
     acc[month].push(order);
     return acc;
   }, {});
-<<<<<<< HEAD
 
   // Calculate total price for each month
   const monthlyTotals = Object.values(ordersByMonth).map((ordersInMonth) =>
@@ -233,13 +205,6 @@ const BarChart = () => {
 
 
 
-=======
-
-  // Calculate total price for each month
-  const monthlyTotals = Object.values(ordersByMonth).map((ordersInMonth) =>
-    ordersInMonth.reduce((total, order) => total + order.totalPrice, 0)
-  );
->>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
 
   return (
     <div className={BarCharts.AppChart}>
@@ -250,11 +215,6 @@ const BarChart = () => {
         <CardBalanceThree className={BarCharts.card} totalUsers={totalUsers}/>
         <CardBalanceFour className={BarCharts.card} totalProducts={totalProducts}/>
       </div>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
       <div className={`${BarCharts.dataCard} ${BarCharts.revenueCard}`}>
         <Line
           data={{
