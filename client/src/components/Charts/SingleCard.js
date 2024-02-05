@@ -1,9 +1,12 @@
 import React from "react";
 import { Paper, Typography, Box } from "@mui/material";
 import SingleCards from "./SingleCards.module.css";
+<<<<<<< HEAD
 
 export const CardBalanceOne = (props) => {
   const { averageOrderValue } = props;
+=======
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
 
   return (
     <>
@@ -13,20 +16,35 @@ export const CardBalanceOne = (props) => {
           sx={{
             width: 320,
             height: 170,
+<<<<<<< HEAD
             borderRadius: "12px",
             border: "1px solid #E6E9EE",
             backgroundColor: "#ffffff",
+=======
+            pt: 0.5,
+            pb: 0.5,
+            borderRadius: "12px",
+            border: "1px solid #E6E9EE",
+            backgroundColor: "#fee7cb",
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
           }}
         >
           {/* <div className={SingleCards.box1}> */}
           <Box
             sx={{
+<<<<<<< HEAD
               // borderRight: "20px solid #368681",
               borderBottom: "20px solid #368681",
               borderLeft: "20px solid #fee7cb",
               height: "100%",
               borderRadius: 2,
               
+=======
+              borderLeft: "8px solid",
+              height: "100%",
+              borderRadius: 2,
+              borderLeftColor: "#368681",
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
             }}
           >
             <Typography
@@ -35,11 +53,19 @@ export const CardBalanceOne = (props) => {
                 p: 2,
                 ml: 2,
                 color: "#4D342B",
+<<<<<<< HEAD
                 textAlign:"center",
                 fontWeight:"bold"
               }}
             >
               قيمة الطلب الإجمالي
+=======
+              }}
+            >
+              {/* {title} */}
+              Revenue
+              {/* الربح */}
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
             </Typography>
             <Typography
               variant="body1"
@@ -49,12 +75,19 @@ export const CardBalanceOne = (props) => {
                 fontWeight: "600",
                 fontSize: "20px",
                 color: "#368681",
+<<<<<<< HEAD
                 textAlign:"center"
               }}
             >
               {averageOrderValue !== null
                 ? `${averageOrderValue}`
                 : "Loading..."}
+=======
+              }}
+            >
+              {/* {unit} {amount} */}
+              unit amount
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
             </Typography>
           </Box>
           {/* </div> */}
@@ -64,6 +97,7 @@ export const CardBalanceOne = (props) => {
   );
 };
 
+<<<<<<< HEAD
 export const CardBalanceTwo = (revenue) => {
   const { totalRevenueToday } = revenue;
   return (
@@ -236,3 +270,6 @@ export const CardBalanceFour = (product) => {
     </>
   );
 };
+=======
+export default CardBalance;
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c

@@ -15,6 +15,7 @@ import NotFound from "../pages/NotFound/NotFound.js";
 import LayoutWithSidebar from "./LayoutWithSidebar.js";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
 import Cart from "../pages/cart/Cart.js";
+import ProtectedRoute from "./ProtectedRoute.js";
 function AppRoutes() {
   return (
     <Routes>
@@ -33,12 +34,10 @@ function AppRoutes() {
         path="/products"
         element={
           <ProtectedRoute>
-
-       
             <LayoutWithSidebar>
               <Products />
             </LayoutWithSidebar>
-            </ProtectedRoute>
+          </ProtectedRoute>
         }
       ></Route>
       <Route
@@ -49,18 +48,18 @@ function AppRoutes() {
               {" "}
               <Users />
             </LayoutWithSidebar>
-            </ProtectedRoute>
+          </ProtectedRoute>
         }
       ></Route>
       <Route
         path="/overview"
         element={
-          
+          <ProtectedRoute>
             <LayoutWithSidebar>
               {" "}
               <OverView />
             </LayoutWithSidebar>
-           
+          </ProtectedRoute>
         }
       ></Route>
       <Route
@@ -71,7 +70,7 @@ function AppRoutes() {
               {" "}
               <Order />
             </LayoutWithSidebar>
-             </ProtectedRoute>
+          </ProtectedRoute>
         }
       ></Route>
 

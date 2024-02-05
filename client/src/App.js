@@ -10,7 +10,7 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ScrollToTop/>
+      <ScrollToTop />
       <div className="App">
         <AppRoutes />
       </div>

@@ -19,7 +19,12 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 function Signin() {
+<<<<<<< HEAD
   const { setUser, fetchUserData, fetchUserDataone,user } = useContext(AuthContext);
+=======
+  const { setUser, fetchUserData, fetchUserDataone, user } =
+    useContext(AuthContext);
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
   const [disabled, setDisabled] = useState(false);
   const [isPending, setIsPending] = useState(false);
   const { apiCall } = useApi();
@@ -103,13 +108,18 @@ function Signin() {
       console.log("role", res.token.data.role);
       console.log("call auth");
       // fetchUserData();
+<<<<<<< HEAD
       fetchUserDataone()
+=======
+      fetchUserDataone();
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
       toast.success("تم تسجيل الدخول بنجاح");
       setIsPending(false);
       if (res.token.data.role === "admin") {
         navigate("/users");
       } else if (res.token.data.role === "dataEntry") {
         navigate("/products");
+<<<<<<< HEAD
       }
       else navigate("/")
       
@@ -128,6 +138,24 @@ function Signin() {
       } else {
         toast.error(error.message);
       }
+=======
+      } else navigate("/");
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.errors) {
+        const { errors } = error.response.data;
+
+        if (errors.email) {
+          const emailError = errors.email;
+          toast.error(emailError);
+        }
+        if (errors.password) {
+          const passwordError = errors.password;
+          toast.error(passwordError);
+        }
+      } else {
+        toast.error(error.message);
+      }
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
       setIsPending(false);
     }
   };
@@ -275,6 +303,10 @@ function Signin() {
             fullWidth
             type="submit"
             onClick={() => fetchUserData(formData.email, formData.password)}
+<<<<<<< HEAD
+=======
+            disabled={isPending}
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
             sx={{
               marginBottom: "1rem",
               height: 35,

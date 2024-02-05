@@ -52,6 +52,7 @@ export const AuthProvider = ({ children }) => {
     try {
       await axiosInstance.post("/user/logout");
       setUser(null);
+      toast.success("تم تسجيل الخروج");
     } catch (error) {
       console.error("Logout error:", error);
     }

@@ -2,7 +2,10 @@
   height: 100%;
   width: 100%;
   display: flex;
+<<<<<<< HEAD
   margin: 0 30px;
+=======
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -10,6 +13,7 @@
   gap: 1vw;
   flex-wrap: wrap;
   background-color: white;
+<<<<<<< HEAD
    /* position: relative; / */
 }
 
@@ -24,21 +28,45 @@ font-weight: bold;
 margin-top: 10px;
 color: var(--brown-color);
 font-size: 35px; 
+=======
+  /* position: relative; */
+}
+
+.title1 {
+  position: absolute;
+  top: 0; /* Position at the top */
+  left: 50%; /* Position at the center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  background-color: white;
+  padding: 7px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--brown-color);
+  font-size: 35px;
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
 }
 .dataCard {
   background-color: white;
   border-radius: 0.5em;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 1em;
+<<<<<<< HEAD
 
 }
 
 .revenueCard {
   width: 89.5%;
+=======
+}
+
+.revenueCard {
+  width: 92%;
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
   height: 20rem;
 }
 
 .customerCard {
+<<<<<<< HEAD
   width: 44%;
   height: 20rem;
 }
@@ -91,3 +119,40 @@ background-color: #ffffff;
   height: 20rem;
 } 
 }
+=======
+  width: 50%;
+  height: 20rem;
+}
+
+.categoryCard {
+  width: 40%;
+  height: 20rem;
+}
+
+.cardsWrapper {
+  /* display: flex;
+  flex-direction: row;
+  /* margin: 5px; */
+  /* padding: 1rem; */
+  /* gap: 85px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5.8rem;
+}
+.card {
+  flex: 1 0 250px;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .card {
+    flex: 1 0 100%;
+  }
+  .cardsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c

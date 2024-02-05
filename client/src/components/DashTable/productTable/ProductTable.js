@@ -34,7 +34,10 @@ const ProductTable = () => {
     isError,
     data: ProductData,
   } = useQuery(["user-table", page], () => fetchProducts(page));
+<<<<<<< HEAD
 
+=======
+>>>>>>> b862b33e879d57931a28395af05066112d9bcf2c
 
   React.useEffect(() => {
     if (ProductData) {
