@@ -203,13 +203,13 @@ const BarChart = () => {
 
   return (
     <div className={BarCharts.AppChart}>
-            <h1 className={BarCharts.title1}> لمحة عامة</h1>
-      
-      <div className={BarCharts.cardsWrapper} >
-        <CardBalanceOne  averageOrderValue={averageOrderValue}/>
-        <CardBalanceTwo  totalRevenueToday={totalRevenueToday}/>
-        <CardBalanceThree  totalUsers={totalUsers}/>
-        <CardBalanceFour  totalProducts={totalProducts}/>
+      <h1 className={BarCharts.title1}> لمحة عامة</h1>
+
+      <div className={BarCharts.cardsWrapper}>
+        <CardBalanceOne averageOrderValue={averageOrderValue} />
+        <CardBalanceTwo totalRevenueToday={totalRevenueToday} />
+        <CardBalanceThree totalUsers={totalUsers} />
+        <CardBalanceFour totalProducts={totalProducts} />
       </div>
 
       <div className={`${BarCharts.dataCard} ${BarCharts.revenueCard}`}>
@@ -254,14 +254,13 @@ const BarChart = () => {
         />
       </div>
       <div className={BarCharts.ChartWrapper}>
+        <div className={`${BarCharts.dataCard} ${BarCharts.customerCard}`}>
+          <Bar data={chartData} options={chartOptions} />
+        </div>
 
-      <div className={`${BarCharts.dataCard} ${BarCharts.customerCard}`}>
-        <Bar data={chartData} options={chartOptions} />
-      </div>
-
-      <div className={`${BarCharts.dataCard} ${BarCharts.categoryCard}`}>
-        <Doughnut data={pieChartData} options={pieChartOptions} />
-      </div>
+        <div className={`${BarCharts.dataCard} ${BarCharts.categoryCard}`}>
+          <Doughnut data={pieChartData} options={pieChartOptions} />
+        </div>
       </div>
     </div>
   );
