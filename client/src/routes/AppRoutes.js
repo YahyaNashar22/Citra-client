@@ -56,12 +56,12 @@ function AppRoutes() {
       <Route
         path="/overview"
         element={
-          
+          <ProtectedRoute>
             <LayoutWithSidebar>
               {" "}
               <OverView />
             </LayoutWithSidebar>
-           
+            </ProtectedRoute>
         }
       ></Route>
       <Route
